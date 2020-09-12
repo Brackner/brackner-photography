@@ -1,0 +1,14 @@
+.nav-wrapper{
+  display: flex; /*seperate content*/
+  justify-content: space-between; /*give distance to content if specified sides i.e. left and right*/
+  padding: 38px;
+}
+
+.left-side{
+  display: flex; /*seperate content*/
+}
+
+.nav-wrapper > .left-side > div { /*traverse down tree into class left side and elements div*/
+  margin-right: 20px;
+  font-size: 0.9em;
+}
