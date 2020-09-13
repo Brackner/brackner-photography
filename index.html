@@ -11,7 +11,7 @@
 
       <div class="nav-wrapper">
         <div class="left-side">
-          <div class="nav-link-wrapper active-nav-link">
+          <div class="nav-link-wrapper">
             <a href="index.html">Home</a>
           </div>
           <div class="nav-link-wrapper">
@@ -169,18 +169,20 @@
 
     </div>
   </body>
-  <script type="text/javascript">
-    const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper') /*find all elements on page that have this class/selector*/
+  <script>
+    const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper');
 
-    portfolioItems.forEach(portfolioItem => { /*for each item within the above const*/
+    portfolioItems.forEach(portfolioItem => {
+      portfolioItem.addEventListener('mouseover', () => {
+        console.log(portfolioItem.childNodes[1].classList)
+        portfolioItem.childNodes[1].classList.add('image-blur');
+      });
 
-        portfolioItem.addEventListener('mouseover', () => {
-            portfolioItem.childNodes[1].classList.add('img-darken'); /*run this css on this event*/
-        })
-
-        portfolioItem.addEventListener('mouseout', () => {
-            portfolioItem.childNodes[1].classList.remove('img-darken'); /*run this css on this event*/
-        })
+      portfolioItem.addEventListener('mouseout', () => {
+        console.log(portfolioItem.childNodes[1].classList)
+        portfolioItem.childNodes[1].classList.remove('image-blur');
+      });
     });
+
   </script>
 </html>
