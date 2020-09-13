@@ -9,8 +9,6 @@ RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html
 
 
-RewriteCond %{HTTP_HOST} ^domain.co.uk [NC]
 
-RewriteRule ^(.*)$ http://www.alexbrackner.co.uk/$1 [R=301,NC]
 
-RewriteRule ^index.html$ http://www.alexbrackner.co.uk/ [R=301,L]
+RewriteRule ^index\.html$ / [NC,R,L]
