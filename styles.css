@@ -1,3 +1,14 @@
+body {
+  font-family: "Lato", sans-serif; /*call font from html doc font import,if can't find lato then use sans serif*/
+  margin: 0px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/*nav styles */
 .nav-wrapper{
   display: flex; /*seperate content*/
   justify-content: space-between; /*give distance to content if specified sides i.e. left and right*/
@@ -24,4 +35,90 @@
   color: #8a8a8a;
   text-decoration: none;
   transition: color 0.5s;
+}
+
+.nav-link-wrapper:hover {
+  border-bottom: 1px solid black;
+}
+
+.nav-link-wrapper a:hover {
+  color: black;
+}
+
+.active-nav-link {
+  border-bottom: 1px solid black;
+}
+
+.active-nav-link a {
+  color: black !important; /*override colour*/
+}
+
+/* portfolio styles */
+.portfolio-items-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.portfolio-item-wrapper {
+  position: relative; /*needs to be here, so that position absolute child elements can be on top of the div*/
+}
+
+.portfolio-img-background {
+  height: 350px;
+  width: 100%;
+  background-size: cover; /*sizes all items evenly*/
+  background-position: center; /**/
+  background-repeat: no-repeat;/**/
+}
+
+.img-text-wrapper {
+  position: absolute; /*see above*/
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.logo-wrapper img {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.img-text-wrapper .subtitle { /*before hover, static state*/
+  transition: 1s;
+  font-weight: 600;
+  color: transparent;
+}
+
+.img-text-wrapper:hover .subtitle { /*when hover, change class*/
+  font-weight: 600;
+  color: lightseagreen;
+}
+
+.img-darken {
+  transition: 1s;
+  filter: brighteness(10%);
+}
+
+/*about page styles*/
+.two-column-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.profile-image-wrapper {
+  width: 100%;
+}
+
+.profile-content-wrapper {
+  padding: 30px;
+}
+
+.profile-content-wrapper h1 {
+  color: lightseagreen;
 }
